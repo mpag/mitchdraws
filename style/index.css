@@ -33,7 +33,7 @@ body {
   display: block;
   bottom: 25%;
   left:40px;
-  width: 300px;
+  width: 250px;
 }
 
 
@@ -58,9 +58,37 @@ h1 {
 }
 
 p {
+  margin-left: 8px;
   font-size: 0.8em;
   color: black;
   font-family: 'Open Sans', sans-serif;
+  /*text-indent: 15px*/
+}
+
+em {
+  font-style: normal;
+  font-weight: 600;
+}
+
+a {
+  font-size: 1.0em;
+  padding-left: 12px;
+  font-family: 'Open Sans', sans-serif;
+  position: absolute;
+  color: black;
+  text-decoration: none;
+  -webkit-transition: 0.1s ease-out;
+  -moz-transition: 0.1s ease-out;
+  -o-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+}
+
+a:hover {
+  transform: translate(5px,0);
+  -webkit-transform: translate(5px,0);
+  -moz-transform: translate(5px,0);
+  -o-transform: translate(5px,0);
+  -ms-transform: translate(5px,0);
 }
 
 

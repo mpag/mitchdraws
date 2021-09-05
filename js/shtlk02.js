@@ -10,7 +10,7 @@ document.getElementById('container').addEventListener('touchstart', function(e){
 
 ///////////Loader Variables////////
 var index = 0;
-var imgFiles = ["img/sketch/02_sketch.png","img/sketch/03_sketch.png","img/sketch/04_sketch.png","img/sketch/05_sketch.png","img/sketch/06_sketch.png","img/sketch/07_sketch.png","img/sketch/08_sketch.png","img/sketch/09_sketch.png","img/sketch/10_sketch.png","img/sketch/11_sketch.png","img/sketch/12_sketch.png","img/sketch/13_sketch.png","img/sketch/14_sketch.png","img/sketch/15_sketch.png","img/sketch/16_sketch.png","img/sketch/17_sketch.png","img/sketch/18_sketch.png"];
+var imgFiles = ["img/sketch/02_sketch.png","img/sketch/03_sketch.png","img/sketch/04_sketch.png","img/sketch/05_sketch.png","img/sketch/06_sketch.png","img/sketch/07_sketch.png","img/sketch/08_sketch.png","img/sketch/09_sketch.png","img/sketch/10_sketch.png","img/sketch/11_sketch.png"];
 // var objectMove = [];
 
 //////////INIT VAIRABLES///////
@@ -77,11 +77,12 @@ function init(){
       map: texture, 
       side: THREE.DoubleSide, 
       transparent: true,
-      opacity: map_range(i, 0, imgFiles.length-1, 0.7, 0.3)
+      opacity: 0.9
+      // opacity: map_range(i, 0, imgFiles.length-1, 1.0, 0.3)
     });
     var plane = new THREE.Mesh(geometry, planeMaterial)
     plane.id = "plane" + i ;
-    plane.position.z = -((i+1) * 30);
+    plane.position.z = -((i+1) * 30) - 0;
     planes.push(plane);
     scene.add(plane); 
   };
@@ -129,8 +130,8 @@ function animate(){
   var time2 = Date.now() * 0.002;
 
   if (isMobileDevice() == false){
-    camera.position.x += ( mouseX - camera.position.x ) * .01;
-    camera.position.z += ( mouseY - camera.position.z ) * 0.5;
+    camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+    camera.position.z += ( mouseY/2 - camera.position.z ) * 0.2;
     centerVec = new THREE.Vector3( 0, 0, camera.position.z - 300);
     controls.target = centerVec;
   } else {
