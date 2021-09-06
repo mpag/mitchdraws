@@ -35,6 +35,7 @@ animate();
 function init(){
   //Scenes
   scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xE8EBED, 50, 100);;
   
   //CAMERA
   near = -100; 
@@ -101,7 +102,6 @@ function init(){
   renderer.setSize( screenWidth, screenHeight);
   renderer.autoClear = false;
   renderer.setClearColor( 0xffffff, 0);
-  renderer.domElement.style.zIndex = 0;
   document.body.appendChild( renderer.domElement );
 
 
