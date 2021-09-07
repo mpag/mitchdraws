@@ -87,7 +87,7 @@ a:hover {
 }
 
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 900px) {
   p {
     font-size: 1em;
   }
